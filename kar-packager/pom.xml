@@ -4,10 +4,52 @@
 
 	<groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
 	<artifactId>kar-packager</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>kar-packager</name>
 	<url>https://github.com/hstaudacher/tycho-karaf-bridge</url>
 	<packaging>maven-plugin</packaging>
+
+	<description>
+     The kar-packager is a small Maven Plugin to create Apache Karaf Archives (.kar) from a given folder. Everything the 
+     folder needs to contain are the bundles to make up the archive.
+  </description>
+
+	<developers>
+		<developer>
+			<name>Holger Staudacher</name>
+			<organization>EclipseSource</organization>
+		</developer>
+	</developers>
+	
+	<organization>
+		<name>EclipseSource</name>
+		<url>http://eclipsesource.com</url>
+	</organization>
+
+	<scm>
+		<url>git://github.com/hstaudacher/tycho-karaf-bridge.git</url>
+		<connection>scm:git:git://github.com/hstaudacher/tycho-karaf-bridge.git</connection>
+	</scm>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/hstaudacher/tycho-karaf-bridge/issues</url>
+	</issueManagement>
+
+	
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License - v 1.0</name>
+			<url>http://www.eclipse.org/org/documents/epl-v10.html</url>
+			<comments>All code in com.eclipsesource packages is published under the terms of the Eclipse Public License, version 1.0.</comments>
+		</license>
+		<license>
+			<name>GNU GPL v3</name>
+			<url>http://www.gnu.org/licenses/gpl.html</url>
+			<comments>All code in com.crsn.maven packages is published under the terms of the GPL3 and was taken and modified form the maven-osgi-repo Google Code Project.</comments>
+		</license>
+	</licenses>
 
 	<dependencies>
 
@@ -97,18 +139,5 @@
 			<version>2.2.8</version>
 		</dependency>
 	</dependencies>
-	
-	<scm>
-		<url>git://github.com/hstaudacher/tycho-karaf-bridge.git</url>
-		<connection>scm:git:git://github.com/hstaudacher/tycho-karaf-bridge.git</connection>
-		<developerConnection>Holger Staudacher</developerConnection>
-	</scm>
-	<issueManagement>
-		<system>github</system>
-		<url>https://github.com/hstaudacher/tycho-karaf-bridge/issues</url>
-	</issueManagement>
-	<organization>
-		<name>EclipseSource</name>
-		<url>http://eclipsesource.com</url>
-	</organization>
+
 </project>
