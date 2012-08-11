@@ -1,0 +1,19 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: Td7/UvGsMwxdwwp6dN1C4RGFC8s=
+Created-By: 1.6.0_12 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest: 1diA6b4Arrw0aVgL8Gdhstf/k50=
+
+Name: META-INF/plexus/.gitignore
+SHA1-Digest: zWJJx/hV8IVYiwPoqwNFFJMxxU8=
+
+Name: jars/maven-dependency-tree-1.2-SNAPSHOT.jar
+SHA1-Digest: kgkSJJH99gjD3Ya5an3DueZ9WF8=
+
+Name: META-INF/maven/org.maven.ide.eclipse/org.maven.ide.eclipse.depen
+ dency_tree/pom.properties
+SHA1-Digest: yaFI37G7sntAhmoJG4TN3EkBv1E=
+
+Name: META-INF/maven/org.maven.ide.eclipse/org.maven.ide.eclipse.depen
+ dency_tree/pom.xml
+SHA1-Digest: upibONpf3KcAXV1jvccO+eiYf7s=
+

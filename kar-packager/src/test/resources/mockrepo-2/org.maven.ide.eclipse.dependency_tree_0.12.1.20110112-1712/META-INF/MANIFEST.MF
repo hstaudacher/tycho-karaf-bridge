@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.maven.shared.dependency.tree,org.apache.mav
+ en.shared.dependency.tree.filter,org.apache.maven.shared.dependency.t
+ ree.traversal,META-INF.plexus
+Bundle-ClassPath: jars/maven-dependency-tree-1.2-SNAPSHOT.jar
+Built-By: m2e
+Bundle-Name: Maven Dependency Tree Bundle
+Created-By: Apache Maven
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,JavaSE-1.6
+Require-Bundle: org.maven.ide.eclipse.maven_embedder;bundle-version="[
+ 0.12.0,0.13.0)"
+Bundle-Vendor: Sonatype, Inc.
+MavenArtifact-BaseVersion: 1.2.1.20090519-1900
+Build-Jdk: 1.6.0_12
+Bundle-Version: 0.12.1.20110112-1712
+MavenArtifact-ArtifactId: org.maven.ide.eclipse.dependency_tree
+MavenArtifact-GroupId: org.maven.ide.eclipse
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.maven.ide.eclipse.dependency_tree;singleton:=
+ true
+Archiver-Version: Plexus Archiver
+
+Name: META-INF/plexus/.gitignore
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: jars/maven-dependency-tree-1.2-SNAPSHOT.jar
+SHA1-Digest: jogAR08Tj10S0oYFMEFNiTRJNt4=
+
+Name: META-INF/maven/org.maven.ide.eclipse/org.maven.ide.eclipse.depen
+ dency_tree/pom.properties
+SHA1-Digest: 7nI0Yl1+Uw03POtbPUe2w1dD44o=
+
+Name: META-INF/maven/org.maven.ide.eclipse/org.maven.ide.eclipse.depen
+ dency_tree/pom.xml
+SHA1-Digest: HFBX13qIxDH0AKclibAtzuW+f34=
+
