@@ -36,7 +36,7 @@ In the module you want to create the kar archive create a pom with the packaging
       <artifactId>kar-packager</artifactId>
       <version>0.0.1</version>
       <configuration>
-        <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES_}</bundlesFolder>
+        <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
         <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
       </configuration>
     </plugin>
