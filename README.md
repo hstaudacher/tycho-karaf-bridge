@@ -16,7 +16,7 @@ In your parent pom enable the plugin:
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.0.1</version>
+      <version>0.1.0</version>
       <extensions>true</extensions>
     </plugin>
     ...
@@ -34,7 +34,7 @@ In the module you want to create the kar archive create a pom with the packaging
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.0.1</version>
+      <version>0.1.0</version>
       <configuration>
         <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
         <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
@@ -55,4 +55,4 @@ License
 -------
 
 All code in com.eclipsesource.* packages is published under the terms of the [Eclipse Public License, version 1.0](http://www.eclipse.org/legal/epl-v10.html).
-All code in com.crsn.maven.* packages is published under the terms of the GPL3 and was taken and modified form teh [maven-osgi-repo Google Code Project](http://code.google.com/p/maven-osgi-repo/). 
+All code in com.crsn.maven.* packages is published under the terms of the GPL3 and was taken and modified from the [maven-osgi-repo Google Code Project](http://code.google.com/p/maven-osgi-repo/). 
