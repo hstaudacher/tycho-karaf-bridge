@@ -67,14 +67,17 @@ public class OsgiToMavenMapper {
     return new MavenVersion( version.getMajor(), version.getMinor(), version.getMicro() );
   }
 
-  static String createGroupId( String pluginName ) {
+  public static String createGroupId( String pluginName ) {
     List<String> parts = Arrays.asList( pluginName.split( "\\." ) );
+    if( parts.size() == 1 ) {
+      return pluginName;
+    }
     return StringUtils.join( parts.subList( 0, parts.size() - ( isSourcePlugin( parts )
                                                                                        ? 2
                                                                                        : 1 ) ), '.' );
   }
 
-  static String createArtifactName( String pluginName ) {
+  public static String createArtifactName( String pluginName ) {
     List<String> parts = Arrays.asList( pluginName.split( "\\." ) );
     return isSourcePlugin( parts )
                                   ? parts.get( parts.size() - 2 )
