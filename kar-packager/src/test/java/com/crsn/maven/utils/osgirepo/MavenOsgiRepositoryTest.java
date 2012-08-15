@@ -26,12 +26,12 @@ public class MavenOsgiRepositoryTest {
 
   @Test
   public void repoExistWithPomFile() {
-    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1/lib-2.0.1.pom" );
+    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1-v201108020636/lib-2.0.1-v201108020636.pom" );
   }
 
   @Test
   public void repoExistWithJarFile() {
-    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1/lib-2.0.1.jar" );
+    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1-v201108020636/lib-2.0.1-v201108020636.jar" );
   }
 
   @Test
@@ -51,22 +51,22 @@ public class MavenOsgiRepositoryTest {
 
   @Test
   public void repoExistWithMd5FileForPomDigest() {
-    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1/lib-2.0.1.pom.md5" );
+    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1-v201108020636/lib-2.0.1-v201108020636.pom.md5" );
   }
 
   @Test
   public void repoExistWithSha1FileForPomDigest() {
-    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1/lib-2.0.1.pom.sha1" );
+    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1-v201108020636/lib-2.0.1-v201108020636.pom.sha1" );
   }
 
   @Test
   public void repoExistWithMd5FileForFileDigest() {
-    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1/lib-2.0.1.jar.md5" );
+    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1-v201108020636/lib-2.0.1-v201108020636.jar.md5" );
   }
 
   @Test
   public void repoExistWithSha1FileForFileDigest() {
-    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1/lib-2.0.1.jar.sha1" );
+    assertFileExist( "/org/eclipse/xtext/xtend2/lib/2.0.1-v201108020636/lib-2.0.1-v201108020636.jar.sha1" );
   }
 
   private void assertFileExist( String createdFile ) {

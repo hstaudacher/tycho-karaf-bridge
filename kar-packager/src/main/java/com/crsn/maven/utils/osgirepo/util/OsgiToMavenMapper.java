@@ -64,7 +64,7 @@ public class OsgiToMavenMapper {
     if( version == null ) {
       return null;
     }
-    return new MavenVersion( version.getMajor(), version.getMinor(), version.getMicro() );
+    return new MavenVersion( version.getMajor(), version.getMinor(), version.getMicro(), version.getQualifier() );
   }
 
   public static String createGroupId( String pluginName ) {
