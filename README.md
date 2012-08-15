@@ -48,7 +48,7 @@ As you can see the plugin needs to be configured with two properties. The first 
 
 The kar-packaer also allows additional configuration for bundles, feature dependencies and config admin properties within the configuration section. 
 
-Configure bundles:
+**Configure bundles:**
 
 ```xml
 ...
@@ -70,7 +70,7 @@ Configure bundles:
 ...
 ```
 
-Configure Feature dependencies: 
+**Configure Feature dependencies:** 
 
 ```xml
 ...
@@ -93,7 +93,7 @@ Configure Feature dependencies:
 ...
 ```
 
-Configure properties for the config admin: 
+**Configure properties for the config admin:** 
 
 ```xml
 ...
