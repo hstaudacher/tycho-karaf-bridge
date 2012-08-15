@@ -12,22 +12,26 @@ public class Feature {
   private String featureName;
   private String version;
   private List<BundleConfiguration> bundlesConfiguration;
+  private List<FeatureDependency> featureDependencies;
 
   public Feature( List<MavenArtifact> artifacts,
                   String featureName,
                   String version,
-                  List<BundleConfiguration> bundlesConfiguration )
+                  List<BundleConfiguration> bundlesConfiguration, 
+                  List<FeatureDependency> featureDependencies )
   {
     this.artifacts = artifacts;
     this.featureName = featureName;
     this.version = version;
     this.bundlesConfiguration = bundlesConfiguration;
+    this.featureDependencies = featureDependencies;
   }
 
   public void write( PrintStream out ) {
     out.println( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" );
     out.println( "<features>" );
     out.println( "  <feature name='" + featureName + "' version='" + version + "'>" );
+    writeFeatureDependencies( out );
     for( MavenArtifact artifact : artifacts ) {
       BundleConfiguration configuration = getConfiguration( artifact ); 
       if( configuration != null  ) {
@@ -39,6 +43,20 @@ public class Feature {
     out.println( "  </feature>" );
     out.println( "</features>" );
     out.close();
+  }
+
+  private void writeFeatureDependencies( PrintStream out ) {
+    if( featureDependencies != null ) {
+      for( FeatureDependency dependency : featureDependencies ) {
+        StringBuilder builder = new StringBuilder();
+        builder.append( "    <feature" );
+        if( dependency.getVersionRange() != null ) {
+          builder.append( " version='" + dependency.getVersionRange() + "'" );
+        }
+        builder.append( ">" + dependency.getName() + "</feature>" );
+        out.println( builder.toString() );
+      }
+    }
   }
 
   private String getConfiguredBundle( MavenArtifact artifact, BundleConfiguration configuration ) {

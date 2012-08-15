@@ -78,6 +78,13 @@ public class KarPackagerMojo extends AbstractMojo {
    * @parameter
    */
   private List<BundleConfiguration> bundlesConfiguration;
+  
+  /**
+   * Feature Dependencies.
+   *
+   * @parameter
+   */
+  private List<FeatureDependency> featureDependencies;
 
   public void execute() throws MojoExecutionException {
     getLog().info( "Start building Karaf Archive with bundles in " + bundlesFolder.getAbsolutePath() );
@@ -109,7 +116,7 @@ public class KarPackagerMojo extends AbstractMojo {
     List<MavenArtifact> artifacts = mavenOsgiRepository.getMavenRepository().getArtifacts();
     File featureFolder = new File( getFeaturePath( repoDir ) );
     featureFolder.mkdirs();
-    Feature feature = new Feature( artifacts, project.getArtifactId(), project.getVersion(), bundlesConfiguration );
+    Feature feature = new Feature( artifacts, project.getArtifactId(), project.getVersion(), bundlesConfiguration, featureDependencies );
     try {
       File featureFile = new File( getFeatureFileName( featureFolder ) );
       featureFile.createNewFile();
