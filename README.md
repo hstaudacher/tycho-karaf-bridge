@@ -1,7 +1,7 @@
 tycho-karaf-bridge
 ==================
 
-kar-packager: The kar-packager is a small Maven Plugin to create [Apache Karaf](http://karaf.apache.org/manual/latest-2.2.x/users-guide/kar.html) Archives (.kar) from a given folder. Everything the folder needs to contain are the bundles to make up the archive.
+**kar-packager:** The kar-packager is a small Maven Plugin to create [Apache Karaf](http://karaf.apache.org/manual/latest-2.2.x/users-guide/kar.html) Archives (.kar) from a given folder. Everything the folder needs to contain are the bundles to make up the archive.
 
 The reason this plugin was created is simple. When you come from the Eclipse-OSGi world you are familiar with [p2](http://eclipse.org/equinox/p2/). When you come form the Apache-OSGi world you are familiar with Maven. When you want to use an [Eclipse Tycho](http://eclipse.org/tycho/) build to produce a Karaf Archive without giving up the Eclipse way you are completely lost! The purpose of this plugin is to bridge the gap between the two worlds, at least for creating Karaf Archives ;).
 
