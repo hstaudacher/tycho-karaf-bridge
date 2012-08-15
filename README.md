@@ -16,7 +16,7 @@ In your parent pom enable the plugin:
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.1.0</version>
+      <version>0.2.0</version>
       <extensions>true</extensions>
     </plugin>
     ...
@@ -34,7 +34,7 @@ In the module you want to create the kar archive create a pom with the packaging
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.1.0</version>
+      <version>0.2.0</version>
       <configuration>
         <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
         <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
@@ -49,7 +49,7 @@ As you can see the plugin needs to be configured with two properties. The first 
 Installation
 ------------
 
-Upload to Maven Central in Progress!
+Available in Maven Central.
 
 License
 -------
