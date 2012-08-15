@@ -13,24 +13,28 @@ public class Feature {
   private String version;
   private List<BundleConfiguration> bundlesConfiguration;
   private List<FeatureDependency> featureDependencies;
+  private List<Config> configAdmin;
 
   public Feature( List<MavenArtifact> artifacts,
                   String featureName,
                   String version,
                   List<BundleConfiguration> bundlesConfiguration, 
-                  List<FeatureDependency> featureDependencies )
+                  List<FeatureDependency> featureDependencies, 
+                  List<Config> configAdmin )
   {
     this.artifacts = artifacts;
     this.featureName = featureName;
     this.version = version;
     this.bundlesConfiguration = bundlesConfiguration;
     this.featureDependencies = featureDependencies;
+    this.configAdmin = configAdmin;
   }
 
   public void write( PrintStream out ) {
     out.println( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" );
     out.println( "<features>" );
     out.println( "  <feature name='" + featureName + "' version='" + version + "'>" );
+    writeConfig( out );
     writeFeatureDependencies( out );
     for( MavenArtifact artifact : artifacts ) {
       BundleConfiguration configuration = getConfiguration( artifact ); 
@@ -43,6 +47,23 @@ public class Feature {
     out.println( "  </feature>" );
     out.println( "</features>" );
     out.close();
+  }
+
+  private void writeConfig( PrintStream out ) {
+    if( configAdmin != null && !configAdmin.isEmpty() ) {
+      for( Config config : configAdmin ) {
+        StringBuilder builder = new StringBuilder();
+        builder.append( "    <config name='" );
+        builder.append( config.getName() );
+        builder.append( "'>" );
+        builder.append( config.getKey() );
+        builder.append( "=" );
+        builder.append( config.getValue() );
+        builder.append( "</config>" );
+        out.println( builder.toString() );
+      }
+      
+    }
   }
 
   private void writeFeatureDependencies( PrintStream out ) {

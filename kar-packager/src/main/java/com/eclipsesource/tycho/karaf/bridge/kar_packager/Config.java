@@ -1,7 +1,7 @@
 package com.eclipsesource.tycho.karaf.bridge.kar_packager;
 
 
-public class FeatureDependency {
+public class Config {
   
   /**
    * @parameter
@@ -11,14 +11,24 @@ public class FeatureDependency {
   /**
    * @parameter
    */
-  private String versionRange;
+  private String key;
+  
+  /**
+   * @parameter
+   */
+  private String value;
 
+  
   public String getName() {
     return name;
   }
   
-  public String getVersionRange() {
-    return versionRange;
+  public String getKey() {
+    return key;
+  }
+  
+  public String getValue() {
+    return value;
   }
   
 }
