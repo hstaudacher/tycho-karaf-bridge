@@ -16,7 +16,7 @@ In your parent pom enable the plugin:
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.2.0</version>
+      <version>0.3.0</version>
       <extensions>true</extensions>
     </plugin>
     ...
@@ -34,7 +34,7 @@ In the module you want to create the kar archive create a pom with the packaging
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.2.0</version>
+      <version>0.3.0</version>
       <configuration>
         <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
         <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
@@ -44,7 +44,78 @@ In the module you want to create the kar archive create a pom with the packaging
 </build>
 ...
 ```
-As you can see the plugin needs to be configured with two properties. The first is the location of the folder which contains all bundles. The second is the name of the Apache Karaf Archive without the .kar extension.
+As you can see the plugin needs to be configured with two properties. The first is the location of the folder which contains all bundles. The second is the name of the Apache Karaf Archive without the .kar extension.   
+
+The kar-packaer also allows additional configuration for bundles, feature dependencies and config admin properties within the configuration section. 
+
+Configure bundles:
+
+```xml
+...
+  <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
+  <artifactId>kar-packager</artifactId>
+  <version>0.3.0</version>
+  <configuration>
+    <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
+    <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
+    <bundlesConfiguration>
+      <bundleConfiguration>
+        <name>some.bundle.synbolic.name</name>
+        <startLevel>70</startLevel>
+        <autoStart>false</autoStart> // optional, default is true
+      </bundleConfiguration>
+      ...
+    </bundlesConfiguration>
+  </configuration>
+...
+```
+
+Configure Feature dependencies: 
+
+```xml
+...
+  <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
+  <artifactId>kar-packager</artifactId>
+  <version>0.3.0</version>
+  <configuration>
+    <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
+    <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
+    <bundlesConfiguration>
+      <featureDependencies>
+        <featureDependency>
+          <name>feature.name</name>
+          <versionRange>optional.version.range</versionRange>
+        </featureDependency>
+        ...
+      </featureDependencies>
+    </bundlesConfiguration>
+  </configuration>
+...
+```
+
+Configure properties for the config admin: 
+
+```xml
+...
+  <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
+  <artifactId>kar-packager</artifactId>
+  <version>0.3.0</version>
+  <configuration>
+    <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
+    <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
+    <bundlesConfiguration>
+      <configAdmin>
+        <config>
+          <name>org.ops4j.pax.web</name>
+          <key>org.osgi.service.http.port</key>
+          <value>9090</value>
+        </config>
+        ...
+      </configAdmin>
+    </bundlesConfiguration>
+  </configuration>
+...
+```
 
 Installation
 ------------
