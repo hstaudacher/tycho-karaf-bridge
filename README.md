@@ -120,7 +120,7 @@ The kar-packaer also allows additional configuration for bundles, feature depend
 Installation
 ------------
 
-Available in Maven Central.
+[Available in Maven Central.](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.eclipsesource.tycho.karaf.bridge%22%20AND%20a%3A%22kar-packager%22)
 
 License
 -------
