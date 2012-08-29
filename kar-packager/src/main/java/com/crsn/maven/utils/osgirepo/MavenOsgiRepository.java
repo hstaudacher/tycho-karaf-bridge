@@ -6,9 +6,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
-
 import com.crsn.maven.utils.osgirepo.content.Content;
 import com.crsn.maven.utils.osgirepo.maven.MavenRepository;
 import com.crsn.maven.utils.osgirepo.osgi.OsgiRepository;
@@ -51,8 +48,7 @@ public class MavenOsgiRepository {
   }
 
   private void createFolders( File file ) {
-    String[] segments = StringUtils.split( file.getAbsolutePath(), File.separator );    
-    File folder = new File( StringUtils.join( ArrayUtils.subarray( segments, 0, segments.length - 1 ), File.separator ) );
+    File folder = new File( file.getAbsolutePath().substring( 0, file.getAbsolutePath().lastIndexOf( File.separator ) ) );
     folder.mkdirs();
   }
 
