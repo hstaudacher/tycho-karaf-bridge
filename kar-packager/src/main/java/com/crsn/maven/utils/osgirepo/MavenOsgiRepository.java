@@ -51,7 +51,7 @@ public class MavenOsgiRepository {
   }
 
   private void createFolders( File file ) {
-    String[] segments = file.getAbsolutePath().split( File.separator );
+    String[] segments = StringUtils.split( file.getAbsolutePath(), File.separator );    
     File folder = new File( StringUtils.join( ArrayUtils.subarray( segments, 0, segments.length - 1 ), File.separator ) );
     folder.mkdirs();
   }
