@@ -36,10 +36,10 @@ public class Feature {
   public void write( PrintStream out ) {
     out.println( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" );
     out.println( "<features>" );
-    out.println( "  <feature name='" + featureName );
+    out.print( "  <feature name='" + featureName );
     out.print( "' version='" + version );
     out.print( "' description='" + description );
-    out.print( "'>" );
+    out.println( "'>" );
     writeConfig( out );
     writeFeatureDependencies( out );
     for( MavenArtifact artifact : artifacts ) {
