@@ -16,7 +16,7 @@ In your parent pom enable the plugin:
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.4.0</version>
+      <version>0.5.0</version>
       <extensions>true</extensions>
     </plugin>
     ...
@@ -34,10 +34,13 @@ In the module you want to create the kar archive create a pom with the packaging
     <plugin>
       <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
       <artifactId>kar-packager</artifactId>
-      <version>0.4.0</version>
+      <version>0.5.0</version>
       <configuration>
         <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
-        <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
+				<featureName>${YOUR_FEATURE_NAME}</featureName>
+				<featureVersion>${YOUR_FEATURE_VERSION}</featureVersion>
+				<featureDescription>${YOUR_FEATURE_DECRIPTION}</featureDescription>				
+        <karFile>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karFile>
       </configuration>
     </plugin>
   </plugins>
@@ -54,10 +57,13 @@ The kar-packaer also allows additional configuration for bundles, feature depend
 ...
   <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
   <artifactId>kar-packager</artifactId>
-  <version>0.4.0</version>
+  <version>0.5.0</version>
   <configuration>
     <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
-    <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
+		<featureName>${YOUR_FEATURE_NAME}</featureName>
+		<featureVersion>${YOUR_FEATURE_VERSION}</featureVersion>
+		<featureDescription>${YOUR_FEATURE_DECRIPTION}</featureDescription>	
+    <karFile>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karFile>
     <bundlesConfiguration>
       <bundleConfiguration>
         <name>some.bundle.synbolic.name</name>
@@ -76,10 +82,13 @@ The kar-packaer also allows additional configuration for bundles, feature depend
 ...
   <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
   <artifactId>kar-packager</artifactId>
-  <version>0.4.0</version>
+  <version>0.5.0</version>
   <configuration>
     <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
-    <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
+		<featureName>${YOUR_FEATURE_NAME}</featureName>
+		<featureVersion>${YOUR_FEATURE_VERSION}</featureVersion>
+		<featureDescription>${YOUR_FEATURE_DECRIPTION}</featureDescription>	
+    <karFile>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karFile>
     <bundlesConfiguration>
       <featureDependencies>
         <featureDependency>
@@ -99,10 +108,13 @@ The kar-packaer also allows additional configuration for bundles, feature depend
 ...
   <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
   <artifactId>kar-packager</artifactId>
-  <version>0.4.0</version>
+  <version>0.5.0</version>
   <configuration>
     <bundlesFolder>${PATH_TO_A_FOLDER_CONTAINING_BUNDLES}</bundlesFolder>
-    <karName>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karName>
+		<featureName>${YOUR_FEATURE_NAME}</featureName>
+		<featureVersion>${YOUR_FEATURE_VERSION}</featureVersion>
+		<featureDescription>${YOUR_FEATURE_DECRIPTION}</featureDescription>	
+    <karFile>${NAME_OF_THE_KAR_ARCHIVE_WITHOUT_.kar}</karFile>
     <bundlesConfiguration>
       <configAdmin>
         <config>
