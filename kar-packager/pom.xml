@@ -3,7 +3,7 @@
 
   <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
   <artifactId>kar-packager</artifactId>
-  <version>0.6.0-SNAPSHOT</version>
+  <version>0.6.0</version>
   <name>kar-packager</name>
   <url>https://github.com/hstaudacher/tycho-karaf-bridge</url>
   <packaging>maven-plugin</packaging>
@@ -28,7 +28,7 @@
   <scm>
     <url>https://github.com/hstaudacher/tycho-karaf-bridge.git</url>
     <connection>scm:git:https://github.com/hstaudacher/tycho-karaf-bridge.git</connection>
-    <tag>HEAD</tag>
+    <tag>0.6.0-RELEASE</tag>
   </scm>
 
   <issueManagement>
