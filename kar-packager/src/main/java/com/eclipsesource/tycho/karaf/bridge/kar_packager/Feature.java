@@ -11,6 +11,7 @@ public class Feature {
   private List<MavenArtifact> artifacts;
   private String featureName;
   private String version;
+  private String description;
   private List<BundleConfiguration> bundlesConfiguration;
   private List<FeatureDependency> featureDependencies;
   private List<Config> configAdmin;
@@ -18,6 +19,7 @@ public class Feature {
   public Feature( List<MavenArtifact> artifacts,
                   String featureName,
                   String version,
+                  String description,
                   List<BundleConfiguration> bundlesConfiguration, 
                   List<FeatureDependency> featureDependencies, 
                   List<Config> configAdmin )
@@ -25,6 +27,7 @@ public class Feature {
     this.artifacts = artifacts;
     this.featureName = featureName;
     this.version = version;
+    this.description = description;
     this.bundlesConfiguration = bundlesConfiguration;
     this.featureDependencies = featureDependencies;
     this.configAdmin = configAdmin;
@@ -33,7 +36,10 @@ public class Feature {
   public void write( PrintStream out ) {
     out.println( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" );
     out.println( "<features>" );
-    out.println( "  <feature name='" + featureName + "' version='" + version + "'>" );
+    out.println( "  <feature name='" + featureName );
+    out.print( "' version='" + version );
+    out.print( "' description='" + description );
+    out.print( "'>" );
     writeConfig( out );
     writeFeatureDependencies( out );
     for( MavenArtifact artifact : artifacts ) {

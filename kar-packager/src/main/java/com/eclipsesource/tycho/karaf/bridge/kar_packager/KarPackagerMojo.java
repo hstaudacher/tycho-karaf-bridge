@@ -66,11 +66,34 @@ public class KarPackagerMojo extends AbstractMojo {
   private File bundlesFolder;
   
   /**
-   * Name of the kar archive to generate.
+   * Name of the feature to generate.
    * 
-   * @parameter expression="${kar.name}"
+   * @parameter expression="${feature.name}"
+   * @required
    */
-  private String karName;
+  private String featureName;
+  
+  /**
+   * Name of the feature to generate.
+   * 
+   * @parameter expression="${feature.version}"
+   * @required
+   */
+  private String featureVersion;
+  
+  /**
+   * Description of the feature archive to generate.
+   * 
+   * @parameter expression="${feature.description}"
+   */
+  private String featureDescription;
+  
+  /**
+   * Name of the kar archive file to generate.
+   * 
+   * @parameter expression="${kar.file}"
+   */
+  private String karFile;
   
   /**
    * Bundle Configuration.
@@ -124,8 +147,9 @@ public class KarPackagerMojo extends AbstractMojo {
     File featureFolder = new File( getFeaturePath( repoDir ) );
     featureFolder.mkdirs();
     Feature feature = new Feature( artifacts,
-                                   project.getArtifactId(),
-                                   project.getVersion(),
+                                   featureName,
+                                   featureVersion,
+                                   featureDescription,
                                    bundlesConfiguration,
                                    featureDependencies,
                                    configAdmin );
@@ -157,7 +181,7 @@ public class KarPackagerMojo extends AbstractMojo {
     getLog().info( "Creating kar archive." );
     MavenArchiver archiver = new MavenArchiver();
     archiver.setArchiver( jarArchiver );
-    archiver.setOutputFile( new File( outputDirectory.getAbsolutePath() + File.separator + karName + ".kar" ) );
+    archiver.setOutputFile( new File( outputDirectory.getAbsolutePath() + File.separator + karFile + ".kar" ) );
     try {
       archiver.getArchiver().addDirectory( new File( workFolder ) );
       archiver.createArchive( project, archive );
