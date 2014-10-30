@@ -23,7 +23,7 @@ public class OsgiToMavenMapper {
       String groupId = createGroupId( plugin.getName() );
       String artifactId = createArtifactName( plugin.getName() );
       Version version = plugin.getVersion();
-      boolean isSourcePlugin = plugin.getName().endsWith( "source" );
+      boolean isSourcePlugin = plugin.getName().endsWith( ".source" );
       MavenArtifactBuilder artefactBuilder = isSourcePlugin
                                                            ? builder.addSourceArtifact()
                                                            : builder.addArtifact();
